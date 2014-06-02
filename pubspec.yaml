@@ -1,2 +1,4 @@
 name: libdialplan
-description: A sample command-line application
+description: A library for loading and saving dialplan models
+Auther: AdaHeads K/S
+version: 0.1
