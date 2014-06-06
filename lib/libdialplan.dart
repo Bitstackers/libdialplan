@@ -13,5 +13,6 @@ part 'dialplan/actions/playaudio.dart';
 part 'dialplan/actions/receptionists.dart';
 part 'dialplan/actions/voicemail.dart';
 
+part 'dialplan/conditions/date.dart';
 part 'dialplan/conditions/time.dart';
 part 'dialplan/conditions/calendarlist.dart';
