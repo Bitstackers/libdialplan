@@ -9,42 +9,31 @@ class Date implements Condition {
   Date();
 
   Date.fromJson(Map json) {
-    if (json.containsKey('mday')) {
-      mday = json['mday'];
-    }
-
-    if (json.containsKey('mon')) {
-      mon = json['mon'];
-    }
-
-    if (json.containsKey('year')) {
-      year = json['year'];
-    }
-
-    if (json.containsKey('comment')) {
-      comment = json['comment'];
-    }
+    mday = json[_JSON_DAYOFMONTH];
+    mon = json[_JSON_MONTH];
+    year = json[_JSON_YEAR];
+    comment = json[_JSON_COMMENT];
   }
 
   Map toJson() {
     Map result = {
-      'condition': 'date'
+      _JSON_CONDITION: _JSON_DATE
     };
 
     if (comment != null) {
-      result['comment'] = comment;
+      result[_JSON_COMMENT] = comment;
     }
 
     if (mday != null) {
-      result['mday'] = mday;
+      result[_JSON_DAYOFMONTH] = mday;
     }
 
     if (mon != null) {
-      result['mon'] = mon;
+      result[_JSON_MONTH] = mon;
     }
 
     if (year != null) {
-      result['year'] = year;
+      result[_JSON_YEAR] = year;
     }
 
     return result;

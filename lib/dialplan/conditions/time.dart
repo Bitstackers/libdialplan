@@ -8,34 +8,26 @@ class Time implements Condition {
   Time();
 
   Time.fromJson(Map json) {
-    if (json.containsKey('time-of-day')) {
-      timeOfDay = json['time-of-day'];
-    }
-
-    if (json.containsKey('wday')) {
-      wday = json['wday'];
-    }
-
-    if (json.containsKey('comment')) {
-      comment = json['comment'];
-    }
+    timeOfDay = json[_JSON_TIME_OF_DAY];
+    wday = json[_JSON_WEEKDAY];
+    comment = json[_JSON_COMMENT];
   }
 
   Map toJson() {
     Map result = {
-      'condition': 'time'
+      _JSON_CONDITION: _JSON_TIME
     };
 
     if (comment != null) {
-      result['comment'] = comment;
+      result[_JSON_COMMENT] = comment;
     }
 
     if (timeOfDay != null) {
-      result['time-of-day'] = timeOfDay;
+      result[_JSON_TIME_OF_DAY] = timeOfDay;
     }
 
     if (wday != null) {
-      result['wday'] = wday;
+      result[_JSON_WEEKDAY] = wday;
     }
 
     return result;

@@ -7,22 +7,21 @@ class ExecuteIvr implements Action {
   ExecuteIvr();
 
   ExecuteIvr.fromJson(Map json) {
-    comment = json['comment'];
-
-    if (json.containsKey('ivrname')) {
-      ivrname = json['ivrname'];
-    }
+    comment = json[_JSON_COMMENT];
+    ivrname = json[_JSON_IVR_NAME];
   }
 
   Map toJson() {
-    Map result = {'action': 'executeivr'};
+    Map result = {
+      _JSON_ACTION: _JSON_EXECUTE_IVR
+    };
 
     if (comment != null) {
-      result['comment'] = comment;
+      result[_JSON_COMMENT] = comment;
     }
 
     if (ivrname != null) {
-      result['ivrname'] = ivrname;
+      result[_JSON_IVR_NAME] = ivrname;
     }
 
     return result;

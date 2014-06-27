@@ -11,8 +11,11 @@ part 'dialplan/actions/execute_ivr.dart';
 part 'dialplan/actions/forward.dart';
 part 'dialplan/actions/playaudio.dart';
 part 'dialplan/actions/receptionists.dart';
+part 'dialplan/actions/transfer.dart';
 part 'dialplan/actions/voicemail.dart';
 
 part 'dialplan/conditions/date.dart';
 part 'dialplan/conditions/time.dart';
 part 'dialplan/conditions/calendarlist.dart';
+
+part 'dialplan/jsonkeys.dart';

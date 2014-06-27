@@ -9,40 +9,31 @@ class Receptionists implements Action {
   Receptionists();
 
   Receptionists.fromJson(Map json) {
-    comment = json['comment'];
-
-    if (json.containsKey('sleeptime')) {
-      sleepTime = json['sleeptime'];
-    }
-
-    if (json.containsKey('music')) {
-      music = json['music'];
-    }
-
-    if (json.containsKey('welcomefile')) {
-      welcomeFile = json['welcomefile'];
-    }
+    comment = json[_JSON_COMMENT];
+    sleepTime = json[_JSON_WAITINGTIME];
+    music = json[_JSON_MUSIC];
+    welcomeFile = json[_JSON_WELCOMEFILE];
   }
 
   Map toJson() {
     Map result = {
-      'action': 'receptionists'
+      _JSON_ACTION: _JSON_RECEPTIONISTS
     };
 
     if (comment != null) {
-      result['comment'] = comment;
+      result[_JSON_COMMENT] = comment;
     }
 
     if (sleepTime != null) {
-      result['sleeptime'] = sleepTime;
+      result[_JSON_WAITINGTIME] = sleepTime;
     }
 
     if (music != null) {
-      result['music'] = music;
+      result[_JSON_MUSIC] = music;
     }
 
     if (welcomeFile != null) {
-      result['welcomefile'] = welcomeFile;
+      result[_JSON_WELCOMEFILE] = welcomeFile;
     }
     return result;
   }

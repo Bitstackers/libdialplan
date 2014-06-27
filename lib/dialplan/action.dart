@@ -4,20 +4,23 @@ class Action implements JsonSerializable {
   Action();
 
   factory Action.fromJson(Map json) {
-    switch (json['action'] as String) {
-      case 'forward':
-        return new Forward.fromJson(json);
-      case 'executeivr':
+    String actionName = json[_JSON_ACTION];
+    switch (actionName) {
+      case _JSON_EXECUTE_IVR:
         return new ExecuteIvr.fromJson(json);
-      case 'playaudio':
+      case _JSON_FORWARD:
+        return new Forward.fromJson(json);
+      case _JSON_PLAYAUDIO:
         return new PlayAudio.fromJson(json);
-      case 'receptionists':
+      case _JSON_RECEPTIONISTS:
         return new Receptionists.fromJson(json);
-      case 'voicemail':
+      case _JSON_TRANSFER:
+        return new Transfer.fromJson(json);
+      case _JSON_VOICEMAIL:
         return new Voicemail.fromJson(json);
 
       default:
-        throw ('Unknown action. action name:"${json['action']}" complete Object:"${json}"');
+        throw 'Unknown action. action name:"${actionName}" complete Object:"${json}"';
     }
   }
 

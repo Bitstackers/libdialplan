@@ -7,22 +7,21 @@ class Forward implements Action {
   Forward();
 
   Forward.fromJson(Map json) {
-    comment = json['comment'];
-
-    if (json.containsKey('number')) {
-      number = json['number'];
-    }
+    comment = json[_JSON_COMMENT];
+    number = json[_JSON_NUMBER];
   }
 
   Map toJson() {
-    Map result = {'action': 'forward'};
+    Map result = {
+      _JSON_ACTION: _JSON_FORWARD
+    };
 
     if (comment != null) {
-      result['comment'] = comment;
+      result[_JSON_COMMENT] = comment;
     }
 
     if (number != null) {
-      result['number'] = number;
+      result[_JSON_NUMBER] = number;
     }
 
     return result;

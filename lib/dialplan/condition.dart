@@ -5,15 +5,16 @@ class Condition implements JsonSerializable {
   Condition();
 
   factory Condition.fromJson(Map json) {
-    switch (json['condition'] as String) {
-      case 'date':
+    String conditionName = json[_JSON_CONDITION];
+    switch (conditionName) {
+      case _JSON_DATE:
         return new Date.fromJson(json);
 
-      case 'time':
+      case _JSON_TIME:
         return new Time.fromJson(json);
 
       default:
-        throw ('Unknown condition "${json['condition']}"');
+        throw 'Unknown condition. condition name:"${conditionName}" complete Object:"${json}"';
     }
   }
 
