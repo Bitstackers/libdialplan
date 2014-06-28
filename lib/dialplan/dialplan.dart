@@ -6,6 +6,7 @@ class Dialplan implements JsonSerializable {
   static const String _JSON_RECEPTIONID = 'receptionid';
   static const String _JSON_ENTRYNUMBER = 'entrynumber';
 
+  int version = 1;
   int receptionId;
   String entryNumber;
   Map<String, List<Extension>> extensionGroups = new Map<String, List<Extension>> ();
@@ -24,7 +25,9 @@ class Dialplan implements JsonSerializable {
               new Extension.fromJson(e)).toList();
         }
       }
-
+      if(json[_JSON_VERSION] != null) {
+        plan.version = json[_JSON_VERSION];
+      }
       plan.receptionId = json[_JSON_RECEPTIONID];
       plan.entryNumber = json[_JSON_ENTRYNUMBER];
 
@@ -35,6 +38,7 @@ class Dialplan implements JsonSerializable {
   }
 
   Map toJson() => {
+    _JSON_VERSION: version,
     _JSON_EXTENSIONGROUP: extensionGroups,
     _JSON_START_EXTENSIONGROUP: startExtensionGroup
   };
