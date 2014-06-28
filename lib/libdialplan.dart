@@ -16,6 +16,6 @@ part 'dialplan/actions/voicemail.dart';
 
 part 'dialplan/conditions/date.dart';
 part 'dialplan/conditions/time.dart';
-part 'dialplan/conditions/calendarlist.dart';
+//part 'dialplan/conditions/calendarlist.dart';
 
 part 'dialplan/jsonkeys.dart';
