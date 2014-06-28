@@ -1,7 +1,9 @@
 part of Dialplan;
 
 const String _JSON_ACTION = 'action';
+const String _JSON_ACTIONLIST = 'actionlist';
 const String _JSON_CONDITION = 'condition';
+const String _JSON_CONDITIONLIST = 'conditionlist';
 const String _JSON_COMMENT = 'comment';
 const String _JSON_DATE = 'date';
 const String _JSON_DESTINATION = 'destination';
@@ -13,12 +15,14 @@ const String _JSON_FORWARD = 'forward';
 const String _JSON_IVR_NAME = 'ivrname';
 const String _JSON_MONTH = 'mon';
 const String _JSON_MUSIC = 'music';
+const String _JSON_NAME = 'name';
 const String _JSON_NUMBER = 'number';
 const String _JSON_PLAYAUDIO = 'playaudio';
 const String _JSON_RECEPTIONISTS = 'receptionists';
 const String _JSON_TIME = 'time';
 const String _JSON_TIME_OF_DAY = 'time-of-day';
 const String _JSON_TRANSFER = 'transfer';
+const String _JSON_VERSION = 'version';
 const String _JSON_VOICEMAIL = 'voicemail';
 const String _JSON_WAITINGTIME = 'sleeptime';
 const String _JSON_WEEKDAY = 'wday';
