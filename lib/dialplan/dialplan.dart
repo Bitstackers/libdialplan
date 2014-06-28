@@ -17,7 +17,7 @@ class Dialplan implements JsonSerializable {
   factory Dialplan.fromJson(Map json) {
     if (json != null) {
       Dialplan plan = new Dialplan();
-      if (json.containsKey(_JSON_EXTENSIONGROUP)) {
+      if (json[_JSON_EXTENSIONGROUP] != null) {
         Map<String, List<Map>> groups = json[_JSON_EXTENSIONGROUP];
         for(String key in groups.keys) {
           List<Map> rawExtensions = groups[key];
