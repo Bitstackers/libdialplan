@@ -1,8 +1,6 @@
 part of Dialplan;
 
 class Extension implements JsonSerializable {
-  bool isStart = false;
-  bool isCatchAll  = false;
   String comment;
   String name;
   String failoverExtension;
@@ -13,13 +11,11 @@ class Extension implements JsonSerializable {
 
   factory Extension.fromJson(Map json) {
     Extension object = new Extension()
-        ..name = json['name']
-        ..comment = json['comment']
-        ..isStart = json['start']
-        ..isCatchAll = json['catchall']
-        ..failoverExtension = json['failoverextension']
-        ..conditions.addAll((json['conditions'] as List).map((Map c) => new Condition.fromJson(c)))
-        ..actions.addAll((json['actions'] as List).map((Map c) => new Action.fromJson(c)));
+      ..name = json['name']
+      ..comment = json['comment']
+      ..failoverExtension = json['failoverextension']
+      ..conditions.addAll((json['conditions'] as List).map((Map c) => new Condition.fromJson(c)))
+      ..actions.addAll((json['actions'] as List).map((Map c) => new Action.fromJson(c)));
 
     return object;
   }
@@ -27,8 +23,6 @@ class Extension implements JsonSerializable {
   Map toJson() {
     Map result = {
       'name': name,
-      'start': isStart,
-      'catchall': isCatchAll,
       'conditions': conditions,
       'actions': actions
     };
