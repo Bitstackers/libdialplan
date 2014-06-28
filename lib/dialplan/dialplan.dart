@@ -30,6 +30,7 @@ class Dialplan implements JsonSerializable {
       }
       plan.receptionId = json[_JSON_RECEPTIONID];
       plan.entryNumber = json[_JSON_ENTRYNUMBER];
+      plan.startExtensionGroup = json[_JSON_START_EXTENSIONGROUP];
 
       return plan;
     } else {
