@@ -13,7 +13,7 @@ class Dialplan implements JsonSerializable {
     if (json != null) {
       Dialplan plan = new Dialplan();
       if (json[_JSON_EXTENSIONGROUPS] != null) {
-        extensionGroups = (json[_JSON_EXTENSIONGROUPS] as List).map((Map group) => new ExtensionGroup.fromJson(group)).toList();
+        plan.extensionGroups = (json[_JSON_EXTENSIONGROUPS] as List).map((Map group) => new ExtensionGroup.fromJson(group)).toList();
       }
 
       if(json[_JSON_VERSION] != null) {
