@@ -6,6 +6,7 @@ part 'dialplan/action.dart';
 part 'dialplan/condition.dart';
 part 'dialplan/dialplan.dart';
 part 'dialplan/extension.dart';
+part 'dialplan/extension_group.dart';
 
 part 'dialplan/actions/execute_ivr.dart';
 part 'dialplan/actions/forward.dart';
