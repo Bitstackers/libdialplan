@@ -1,11 +1,12 @@
 part of Dialplan;
 
 class Dialplan implements JsonSerializable {
-  int version = 1;
-  int receptionId;
+  String comment;
   String entryNumber;
   List<ExtensionGroup> extensionGroups = new List<ExtensionGroup>();
+  int receptionId;
   String startExtensionGroup;
+  int version = 1;
 
   Dialplan();
 
@@ -23,6 +24,7 @@ class Dialplan implements JsonSerializable {
       plan.receptionId = json[_JSON_RECEPTIONID];
       plan.entryNumber = json[_JSON_ENTRYNUMBER];
       plan.startExtensionGroup = json[_JSON_START_EXTENSIONGROUP];
+      plan.comment = json[_JSON_COMMENT];
 
       return plan;
     } else {
@@ -30,9 +32,17 @@ class Dialplan implements JsonSerializable {
     }
   }
 
-  Map toJson() => {
-    _JSON_VERSION: version,
-    _JSON_EXTENSIONGROUPS: extensionGroups,
-    _JSON_START_EXTENSIONGROUP: startExtensionGroup
-  };
+  Map toJson() {
+    Map result = {
+      _JSON_VERSION: version,
+      _JSON_EXTENSIONGROUPS: extensionGroups,
+      _JSON_START_EXTENSIONGROUP: startExtensionGroup
+    };
+
+    if (comment != null) {
+      result[_JSON_COMMENT] = comment;
+    }
+
+    return result;
+  }
 }
