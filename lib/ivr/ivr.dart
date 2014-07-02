@@ -13,7 +13,7 @@ class Ivr implements JsonSerializable {
   int maxFailures;
   int maxTimeouts;
   int ditgitLength;
-  List<Entry> Entries = new List<Entry>();
+  List<Entry> entries = new List<Entry>();
 
   Ivr();
 
@@ -34,7 +34,7 @@ class Ivr implements JsonSerializable {
 
     List entries = json['entries'] as List;
     if(entries != null) {
-      obj.Entries = entries.map((Map entry) => new Entry.fromJson(entry)).toList();
+      obj.entries = entries.map((Map entry) => new Entry.fromJson(entry)).toList();
     }
 
     return obj;
@@ -54,7 +54,7 @@ class Ivr implements JsonSerializable {
       'maxFailures': maxFailures,
       'maxTimeouts': maxTimeouts,
       'ditgitLength': ditgitLength,
-      'entries': Entries,
+      'entries': entries,
     };
 
     return result;
