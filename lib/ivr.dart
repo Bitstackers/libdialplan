@@ -19,7 +19,7 @@ class Ivr implements JsonSerializable {
 
   Ivr();
 
-  factory Ivr.fromJSON(Map json) {
+  factory Ivr.fromJson(Map json) {
     Ivr obj = new Ivr()
       ..name = json['name']
       ..greetingLong = json['greetingLong']
