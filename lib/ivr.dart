@@ -34,7 +34,10 @@ class Ivr implements JsonSerializable {
       ..maxTimeouts = json['maxTimeouts']
       ..ditgitLength = json['ditgitLength'];
 
-    obj.Entries = (json['entries'] as List).map((Map entry) => new Entry.fromJson(entry)).toList();
+    List entries = json['entries'] as List;
+    if(entries != null) {
+      obj.Entries = entries.map((Map entry) => new Entry.fromJson(entry)).toList();
+    }
 
     return obj;
   }
