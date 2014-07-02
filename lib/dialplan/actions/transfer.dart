@@ -1,4 +1,4 @@
-part of Dialplan;
+part of dialplan;
 
 class Transfer implements Action {
   String comment;

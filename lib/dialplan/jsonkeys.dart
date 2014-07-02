@@ -1,4 +1,4 @@
-part of Dialplan;
+part of dialplan;
 
 const String _JSON_ACTION = 'action';
 const String _JSON_ACTIONLIST = 'actionlist';

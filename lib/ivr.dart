@@ -1,8 +1,8 @@
-library IVR;
+library ivr;
 
 import 'dialplan/json_serializable.dart';
 
-class IVR implements JsonSerializable {
+class Ivr implements JsonSerializable {
   String name;
   String greetingLong;
   String greetingShort;
@@ -17,10 +17,10 @@ class IVR implements JsonSerializable {
   int ditgitLength;
   List<Entry> Entries = new List<Entry>();
 
-  IVR();
+  Ivr();
 
-  factory IVR.fromJSON(Map json) {
-    IVR obj = new IVR()
+  factory Ivr.fromJSON(Map json) {
+    Ivr obj = new Ivr()
       ..name = json['name']
       ..greetingLong = json['greetingLong']
       ..greetingShort = json['greetingShort']

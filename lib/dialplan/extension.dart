@@ -1,4 +1,4 @@
-part of Dialplan;
+part of dialplan;
 
 class Extension implements JsonSerializable {
   String comment;

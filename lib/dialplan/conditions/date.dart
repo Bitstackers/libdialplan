@@ -1,4 +1,4 @@
-part of Dialplan;
+part of dialplan;
 
 class Date implements Condition {
   String comment;

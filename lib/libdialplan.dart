@@ -1,4 +1,4 @@
-library Dialplan;
+library dialplan;
 
 import 'dialplan/json_serializable.dart';
 
