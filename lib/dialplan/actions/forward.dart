@@ -1,5 +1,6 @@
 part of dialplan;
 
+@deprecated('Use transfer')
 class Forward implements Action {
   String comment;
   String number;
