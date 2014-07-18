@@ -1,15 +1,15 @@
 part of dialplan;
 
 class TransferType {
-  static const group = 1;
-  static const phone = 2;
+  static const PHONE = 1;
+  static const GROUP = 2;
 }
 
 class Transfer implements Action {
   String comment;
   String extensionGroup;
   String phoneNumber;
-  int type;
+  int type = TransferType.PHONE;
 
   Transfer();
 
