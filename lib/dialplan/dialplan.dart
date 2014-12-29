@@ -22,11 +22,12 @@ class Dialplan implements JsonSerializable {
         plan.version = json[_JSON_VERSION];
       }
 
-      plan.receptionId = json[_JSON_RECEPTIONID];
-      plan.entryNumber = json[_JSON_ENTRYNUMBER];
-      plan.isCompiled = json[_JSON_COMPILED];
-      plan.startExtensionGroup = json[_JSON_START_EXTENSIONGROUP];
-      plan.comment = json[_JSON_COMMENT];
+      plan
+        ..receptionId = json[_JSON_RECEPTIONID]
+        ..entryNumber = json[_JSON_ENTRYNUMBER]
+        ..isCompiled = json[_JSON_COMPILED]
+        ..startExtensionGroup = json[_JSON_START_EXTENSIONGROUP]
+        ..comment = json[_JSON_COMMENT];
 
       return plan;
     } else {
