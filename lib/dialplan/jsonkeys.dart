@@ -5,6 +5,7 @@ const String _JSON_ACTIONLIST = 'actionlist';
 const String _JSON_CONDITION = 'condition';
 const String _JSON_CONDITIONLIST = 'conditionlist';
 const String _JSON_COMMENT = 'comment';
+const String _JSON_COMPILED = 'iscompiled';
 const String _JSON_DATE = 'date';
 const String _JSON_DAYOFMONTH = 'mday';
 const String _JSON_EMAIL = 'email';

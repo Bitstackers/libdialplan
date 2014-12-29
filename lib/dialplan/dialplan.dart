@@ -6,6 +6,7 @@ class Dialplan implements JsonSerializable {
   List<ExtensionGroup> extensionGroups = new List<ExtensionGroup>();
   int receptionId;
   String startExtensionGroup;
+  bool isCompiled = false;
   int version = 1;
 
   Dialplan();
@@ -23,6 +24,7 @@ class Dialplan implements JsonSerializable {
 
       plan.receptionId = json[_JSON_RECEPTIONID];
       plan.entryNumber = json[_JSON_ENTRYNUMBER];
+      plan.isCompiled = json[_JSON_COMPILED];
       plan.startExtensionGroup = json[_JSON_START_EXTENSIONGROUP];
       plan.comment = json[_JSON_COMMENT];
 
